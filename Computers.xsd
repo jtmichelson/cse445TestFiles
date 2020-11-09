@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/XMLSchema.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+>
+	<xsd:element name="Computers">
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element name="Computer" minOccurs="1" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Brand" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+							<xsd:element name="Model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+							<xsd:element name="Year" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+							<xsd:element name="Processor" minOccurs="1" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Architecture" minOccurs="1" maxOccurs="1">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Model" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+													<xsd:element name="Generation" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="Clock" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Cache" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+									</xsd:sequence>
+									<xsd:attribute name="threads" type="xsd:integer" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Storage" minOccurs="1" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Cache" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+										<xsd:element name="Main" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+										<xsd:element name="Harddrive" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="screenSize" type="xsd:decimal" use="optional"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
